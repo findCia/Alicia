@@ -1,13 +1,8 @@
 import streamlit as st
-import pandas as pd
 import pickle
 import os
 
-model_directory = r'D:\kuliah'
-model_path = os.path.join(model_directory, 'rf_diabetes_model.pkl')
-
-
-model_path = os.path.join(model_directory, 'rf_diabetes_model.pkl')
+model_path = 'rf_diabetes_model.pkl'
 
 if os.path.exists(model_path):
      try:
@@ -17,6 +12,7 @@ if os.path.exists(model_path):
 
         st.title("Prediksi Diabetes")
         st.write("Aplikasi ini digunakan untuk membantu memprediksi penyakit diabetes pada seseorang")
+          
         pregnancies = st.slider("Pregnancies", min_value=0, max_value=17, step=1)
         glucose = st.slider("Glucose (mg/dL)", min_value=0.0, max_value=199.0, step=0.1)
         bloodPressure = st.slider("Blood Pressure (mmHg)", min_value=0, max_value=122, step=2)
